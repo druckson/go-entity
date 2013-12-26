@@ -8,7 +8,7 @@ type EntityManager struct {
 func (em *EntityManager) AddComponent(entity Entity, component Component) {
     componentID := component.GetID()
     if em.componentData[componentID] == nil {
-        em.componentData[componentID] = component
+        em.componentData[componentID] = make(map[Entity] []Component)
     }
 }
 
